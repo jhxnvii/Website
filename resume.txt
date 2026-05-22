@@ -1,0 +1,224 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[top=0.2in, bottom=0.5in, left=0.10in, right=0.15in]{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{url}
+\usepackage{enumitem}
+\usepackage{palatino}
+\usepackage{tabularx}
+\usepackage[hidelinks]{hyperref} 
+\fontfamily{SansSerif}
+\selectfont
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{color}
+\definecolor{mygrey}{gray}{0.82}
+\textheight=9.75in
+\raggedbottom
+\flushbottom
+\setlength{\tabcolsep}{0in}
+\newcommand{\isep}{-2 pt}
+\newcommand{\lsep}{-0.5cm}
+\newcommand{\psep}{-0.6cm}
+\renewcommand{\labelitemii}{$\circ$}
+
+\pagestyle{empty}
+
+%-----------------------------------------------------------
+%Custom commands
+\newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
+\newcommand{\resheading}[1]{{\small \colorbox{mygrey}{\begin{minipage}{0.99\textwidth}{\textbf{#1 \vphantom{p\^{E}}}}\end{minipage}}}}
+\newcommand{\ressubheading}[3]{
+\begin{tabular*}{6.62in}{l @{\extracolsep{\fill}} r}
+    \textsc{{\textbf{#1}}} & \textsc{\textit{[#2]}} \\
+\end{tabular*}\vspace{-8pt}}
+%-----------------------------------------------------------
+
+
+
+
+\begin{document}
+
+\begin{center}
+    \begin{minipage}{0.95\textwidth}
+        \centering
+        \textbf{\Huge Jhanvi Jain} \\
+        Email: \href{mailto:jhanvijain052003@gmail.com}{jhanvijain052003@gmail.com} \\
+        LinkedIn: \href{https://www.linkedin.com/in/jhanvi-jain-40394823b/}{linkedin.com/in/jhanvi-jain-40394823b} \\
+        GitHub: \href{https://github.com/jhxnvii}{github.com/jhxnvii}
+    \end{minipage}
+\end{center}
+
+
+
+\vspace{0.2cm}
+
+\noindent \resheading{\textbf{EDUCATION}}\\[-0.2cm]
+% Add the rest of your document content here
+
+
+
+
+\setlength{\tabcolsep}{12pt} % Adjust column width
+\renewcommand{\arraystretch}{1.5} % Adjust row height
+
+\begin{table}[h]
+\centering
+\begin{tabular}{| l | l | l | l | l |}
+\hline
+\textbf{Examination} & \textbf{Institute} & \textbf{Year} & \textbf{CGPA/\%}  \\ 
+\hline
+Graduation & KIIT UNIVERSITY, BHUBANESWAR & 2021-2025 & 8.87 \\ 
+\hline
+Intermediate/+2 & RYAN INTERNATIONAL SCHOOL, GHAZIABAD & 2020-2021 & 92.2  \\ 
+\hline
+Matriculation & RYAN INTERNATIONAL SCHOOL, GHAZIABAD & 2018-2019 & 94.2 \\
+\hline
+\end{tabular}
+\end{table}
+
+
+\noindent \resheading{\textbf{PROFILE}}\\[-0.2cm]
+
+Results-driven professional with a strong passion for computer science, AI/ML, and information security. Experienced in application security, penetration testing, API and web application testing, data protection, and generative AI integration. Skilled in developing secure software products and tools with a focus on risk mitigation and privacy. Possess strong problem-solving, communication, and teamwork skills, enabling success in dynamic, technology-driven environments.
+
+
+\vspace{0.2cm}
+\noindent \resheading{\textbf{PROJECTS }}\\[-0.2cm]
+
+\begin{itemize}
+
+    \item \textbf{PII Detection and Masking Chrome Extension}
+    \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+        \item Developed a Chrome extension to detect and redact personally identifiable information (PII) on websites using keyword matching and regex in JavaScript, Flask, and React.
+        \item Built a React-based dashboard to audit detection, application, and error logs, storing data in a MySQL database (metadata) and Google Cloud Storage Bucket.
+        \item Enabled real-time monitoring and logging of PII exposure on platforms including Google Workspace, generative AI websites (ChatGPT, Claude, Quillbot), and other browser sites.
+    \end{itemize}
+
+    \item \textbf{Handwritten OCR Detection Model (TrOCR)}
+    \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+        \item Led the development of a handwritten optical character recognition (OCR) detection model at RnP Soft.
+        \item Utilized advanced machine learning algorithms and computer vision techniques to convert handwritten text into digital format, achieving enhanced text recognition accuracy.
+    \end{itemize}
+
+    
+    \item \textbf{Email Classifier - Confidential, PII, and Internal Classification}  
+    \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]  
+        \item Built an email classifier using Google Colab to detect Confidential, PII, and Internal emails with automated risk assessment.  
+        \item Implemented rule-based and keyword-scoring techniques for comprehensive email security risk analysis.  
+        \item Developed a Gradio interface for interactive classification results and real-time email analysis.  
+        \end{itemize}
+
+        \item \textbf{Python-Powered Squid Game Simulation}
+    \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+        \item Developed an engaging Squid Game simulation using Python, incorporating diverse game mechanics and interactive functionalities.
+        \item Led the design and implementation of various game elements to enhance user experience and game logic flow.
+    \end{itemize}
+        
+
+\end{itemize}
+
+
+
+\noindent \resheading{\textbf{SKILLS}}\\[-0.2cm]
+\begin{itemize}
+  \item \textbf{Software Development}:  
+    C, C++, Python, Java, Object-Oriented Programming (OOP), Data Structures and Algorithms (DSA), Operating Systems (Linux), Software Engineering, Compiler Design, Design and Analysis of Algorithms (DAA), Automata and Formal Languages, Problem-Solving, HTML, CSS, JavaScript, Web Development, NumPy, Pandas, Matplotlib, Software Development Life Cycle (SDLC), Version Control (Git)
+
+    \item \textbf{Cybersecurity \& Information Security}:  
+    Netskope, Microsoft Purview \& Defender, Mimecast, Cloud Access Security Broker (CASB), Palo Alto Prisma,  
+    Data Loss Prevention (DLP), Secure Web Gateway (SWG), Security Information and Event Management (SIEM),  
+    Role-Based Access Control (RBAC), Information Rights Management (IRM), Endpoint Detection and Response (EDR),  
+    OAuth, Policy Configuration, Audit Logging, Incident Response, Email Security, Data Classification, Data Masking, PII Detection, Penetration Testing, Application Security, Risk Assessment, Vulnerability Assessment  
+    
+
+  \item \textbf{Data Science \& Machine Learning}:  
+    Machine Learning, Artificial Intelligence (AI), Deep Learning, Neural Networks, Computer Vision, Natural Language Processing (NLP), Data Analytics, Big Data, Model Accuracy Metrics, Data Visualization, Data Integrity Metrics, Statistical Analysis, Predictive Modeling, TensorFlow, Scikit-learn
+
+  \item \textbf{Cloud Computing \& DevOps}:  
+    Cloud Computing, Amazon Web Services (AWS), Google Cloud Platform (GCP), Google Cloud Storage, Cloud Security, Infrastructure as a Service (IaaS), Platform as a Service (PaaS), Software as a Service (SaaS)
+
+  \item \textbf{Database Management}:  
+    Database Management Systems (DBMS), MySQL, Relational Database Management Systems (RDBMS), SQL, Database Design, Data Modeling
+
+  \item \textbf{Engineering \& Technical Concepts}:  
+    Engineering Graphics (AutoCAD), Computer Networks (CN), Computer Organization and Architecture, Digital Electronics, Analog Electronic Circuits, High-Performance Computing, Basic Electrical Engineering, Basic Manufacturing Systems, Principles of Digital Communication
+
+  \item \textbf{Business \& Management Fundamentals}:  
+    Fundamentals of Production and Operations Management, Economics, Software Production Management, Human Resource Development and Professional Practice, Law and Ethics
+
+  \item \textbf{Soft Skills}:  
+    Critical Thinking, Time Management, Adaptability, Creativity, Teamwork, Leadership Skills, Professional \& Business Communication, Decision-Making, Conflict Resolution, Organizational \& Interpersonal Skills, Presentation Skills, Attention to Detail, Self-Motivation, Ethical Awareness, Collaboration Skills
+\end{itemize}
+
+
+
+\noindent
+\resheading{\textbf{WORK EXPERIENCE \& INTERNSHIPS}}\\[-0.3cm]
+\begin{itemize}[noitemsep,nolistsep]
+
+
+\item \textbf{Data Protection \& Investigation Specialist} | \textbf{\emph{Flipkart – InfoSec}} \hfill \emph{(October 2024 - Present)}\\[-0.6cm]
+
+\begin{itemize}[noitemsep]
+    \item Engineered and optimized Data Loss Prevention (DLP), Email Security, Cloud Access Security Broker (CASB), and Endpoint Protection workflows using Microsoft Purview, Defender, and Netskope.
+    \item Automated data compliance processes and reporting via Google Apps Script, improving operational efficiency and reducing manual effort by 40\%.
+    \item Built dynamic Flask dashboards to visualize incident data and support real-time threat analysis for security operations team.
+    \item Contributed to phishing detection, PII masking, and fraud analysis pipelines, aligning with secure software development practices.
+    \item Strengthened foundation in secure coding, data protection protocols, and cybersecurity frameworks through real-world implementation.
+\\[-0.5cm]
+\end{itemize}
+\item \textbf {AI/ML Engineer} | \textbf{\emph{RnP Soft Pvt. Ltd.}}\hfill \emph{(May 2024 – August 2024)}\\[-0.6cm]
+
+    \begin{itemize}[noitemsep]
+        \item Led a cross-functional project to develop a handwritten optical character recognition (OCR) model using advanced machine learning techniques.
+        \item Enhanced technical expertise in machine learning, computer vision, project management, and team leadership through hands-on implementation.
+        \item Successfully tackled complex technical challenges in model optimization and deployment, driving measurable project outcomes.\\[-0.5cm]
+    \end{itemize}
+    
+    \item \textbf {Software Engineering Intern} | \textbf{\emph{Wells Fargo Forage}}\hfill \emph{(July 2023)}\\[-0.6cm]
+    \begin{itemize}[noitemsep]
+      \item Completed a comprehensive virtual software engineering internship program focusing on financial technology solutions.
+        \item Created and implemented robust data models for banking applications using industry best practices.
+        \item Developed technical proficiency in software engineering methodologies through practical, real-world scenarios.\\[-0.5cm]
+    \end{itemize}
+    
+    
+
+
+\end{itemize}
+
+
+\noindent
+\resheading{\textbf{ACADEMIC ACHIEVEMENTS AND CERTIFICATIONS}}\\[-0.4cm]
+\begin{itemize}
+\setlength\itemsep{-0.4em}
+    \item AWS Academy Graduate: AWS Academy Introduction to Cloud Semester 1
+    \item Foundations of Data Science (Coursera)
+    \item Cisco Networking Academy Certifications:
+        \begin{itemize}
+        \setlength\itemsep{-0.2em}
+            \item PCAP Python 1 and 2
+            \item Switching, Routing, and Wireless Essentials
+            \item Enterprise Networking, Security, and Automation
+            \item Introduction to Cybersecurity
+            \item Introduction to Networks
+            \item Cybersecurity Essentials
+        \end{itemize}
+    
+    \item Flipkart ISCP Trainee Certificate
+    \item Nestlé e-learning on Sustainability
+    \item Google Data Analytics Enthusiast (Coursera)
+    \item Google Data Analytics Professional (Coursera)
+    \item Software Engineering Virtual Experience Program (Wells Fargo)
+    \item Web Developer (Udemy)
+    \item Java Developer (Udemy)
+    \item RnP Soft AI/ML Internship Certificate
+    \item DevOps Participation Certificate (Microsoft)
+    \item Hackathon Participation Certificate (Microsoft, Squid-Games themed)
+    
+\end{itemize}
+
+
+\end{document}
