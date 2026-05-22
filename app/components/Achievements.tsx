@@ -15,10 +15,10 @@ const certifications = [
 ];
 
 const artworks = [
-  { title: "Madhubani Painting", type: "Traditional", color: "#ff2a85" },
-  { title: "Acrylic Art", type: "ModernCanvas", color: "#00f0ff" },
-  { title: "Oil Painting", type: "Easel Work", color: "#7000ff" },
-  { title: "Glass Painting", type: "Transparent", color: "#00f0ff" }
+  { title: "Madhubani Painting", type: "Traditional", color: "#c06b3e" },
+  { title: "Acrylic Art", type: "ModernCanvas", color: "#2c6b6f" },
+  { title: "Oil Painting", type: "Easel Work", color: "#6a7566" },
+  { title: "Glass Painting", type: "Transparent", color: "#2c6b6f" }
 ];
 
 const Achievements = () => {
@@ -34,12 +34,12 @@ const Achievements = () => {
             viewport={{ once: true }}
             className="mb-12 flex flex-col items-start"
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-deep-purple/10 border border-deep-purple/30 rounded-sm mb-4">
-              <Award size={14} className="text-deep-purple" />
-              <span className="text-xs uppercase tracking-widest text-deep-purple font-mono">Verified Credentials</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-cream border border-ink/10 rounded-sm mb-4">
+              <Award size={14} className="text-ink" />
+              <span className="text-xs uppercase tracking-widest text-ink/70 font-mono">Verified Credentials</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-mono text-white font-bold uppercase tracking-tight">
-              Honors & <span className="text-transparent bg-clip-text bg-gradient-to-r from-deep-purple to-neon-pink">Certifications</span>
+            <h2 className="text-3xl md:text-4xl font-display text-ink font-bold uppercase tracking-tight">
+              Honors & <span className="ink-gradient-text">Certifications</span>
             </h2>
           </motion.div>
 
@@ -52,12 +52,13 @@ const Achievements = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
-                className="glass-card p-4 rounded-xl border border-white/5 hover:border-white/20 transition-all flex items-start gap-4"
+                className="glass-card p-4 rounded-xl border border-ink/10 hover:border-ink/20 transition-all flex items-start gap-4 hover-lift"
+                data-cursor-label="View"
               >
-                <div className="mt-1 opacity-50"><Star size={16} className="text-electric-blue" /></div>
+                <div className="mt-1 opacity-50"><Star size={16} className="text-teal" /></div>
                 <div>
-                  <h3 className="text-sm font-semibold text-white leading-snug">{cert.name}</h3>
-                  <p className="text-xs font-mono text-slate-500 mt-1">{cert.org}</p>
+                  <h3 className="text-sm font-semibold text-ink leading-snug">{cert.name}</h3>
+                  <p className="text-xs font-mono text-ink/50 mt-1">{cert.org}</p>
                 </div>
               </motion.div>
             ))}
@@ -72,12 +73,12 @@ const Achievements = () => {
             viewport={{ once: true }}
             className="mb-12 flex flex-col items-end text-right"
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-neon-pink/10 border border-neon-pink/30 rounded-sm mb-4">
-              <Palette size={14} className="text-neon-pink" />
-              <span className="text-xs uppercase tracking-widest text-neon-pink font-mono">Creative Outlet</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-cream border border-ink/10 rounded-sm mb-4">
+              <Palette size={14} className="text-ink" />
+              <span className="text-xs uppercase tracking-widest text-ink/70 font-mono">Creative Outlet</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-mono text-white font-bold uppercase tracking-tight">
-              Virtual <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-pink to-electric-blue">Gallery</span>
+            <h2 className="text-3xl md:text-4xl font-display text-ink font-bold uppercase tracking-tight">
+              Virtual <span className="ink-gradient-text">Gallery</span>
             </h2>
           </motion.div>
 
@@ -91,22 +92,24 @@ const Achievements = () => {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
                 whileHover={{ y: -10, scale: 1.02 }}
-                className="group relative h-64 glass-card rounded-md border p-2 flex flex-col items-center justify-center text-center cursor-pointer overflow-hidden transition-all duration-500"
+                className="group relative h-64 glass-card rounded-md border p-2 flex flex-col items-center justify-center text-center cursor-pointer overflow-hidden transition-all duration-500 hover-lift"
                 style={{ borderColor: `${art.color}40`, boxShadow: `0 10px 40px ${art.color}15` }}
+                data-cursor-label="Open"
+                data-cursor-magnetic
               >
-                <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] pointer-events-none" />
-                <div className="absolute top-0 bottom-0 w-[1px] bg-white/10 left-10 pointer-events-none" />
-                <div className="absolute top-10 bottom-10 w-[1px] bg-white/10 right-10 pointer-events-none" />
-                <div className="absolute left-0 right-0 h-[1px] bg-white/10 top-10 pointer-events-none" />
-                <div className="absolute left-10 right-10 h-[1px] bg-white/10 bottom-10 pointer-events-none" />
+                <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/paper-1.png')] pointer-events-none" />
+                <div className="absolute top-0 bottom-0 w-[1px] bg-ink/10 left-10 pointer-events-none" />
+                <div className="absolute top-10 bottom-10 w-[1px] bg-ink/10 right-10 pointer-events-none" />
+                <div className="absolute left-0 right-0 h-[1px] bg-ink/10 top-10 pointer-events-none" />
+                <div className="absolute left-10 right-10 h-[1px] bg-ink/10 bottom-10 pointer-events-none" />
                 
                 <ImageIcon size={32} className="opacity-20 mb-4 transition-opacity group-hover:opacity-100" style={{ color: art.color }} />
-                <h3 className="text-xl font-display font-semibold text-white relative z-10">{art.title}</h3>
+                <h3 className="text-xl font-display font-semibold text-ink relative z-10">{art.title}</h3>
                 <span className="text-xs font-mono tracking-widest uppercase mt-2 relative z-10" style={{ color: art.color }}>{art.type}</span>
 
-                <div className="absolute inset-0 flex items-center justify-center bg-cyber-black/90 opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm z-20">
-                  <span className="px-4 py-2 border rounded-full text-xs font-mono uppercase tracking-widest text-white hover:bg-white hover:text-black transition-colors" style={{ borderColor: art.color }}>
-                    View Artwork
+                <div className="absolute inset-0 flex items-center justify-center bg-cream/90 opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm z-20">
+                  <span className="px-4 py-2 border rounded-full text-xs font-mono uppercase tracking-widest text-ink hover:bg-ink hover:text-cream transition-colors" style={{ borderColor: art.color }}>
+                    View Work
                   </span>
                 </div>
               </motion.div>

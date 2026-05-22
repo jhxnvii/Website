@@ -1,6 +1,6 @@
 import * as React from "react";
 import type { Route } from "./+types/home";
-import { useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
 import Navbar from "~/components/Navbar";
 import Hero from "~/components/Hero";
@@ -12,6 +12,7 @@ import Achievements from "~/components/Achievements";
 import Contact from "~/components/Contact";
 import AIAssistant from "~/components/AIAssistant";
 import Footer from "~/components/Footer";
+import GalleryCursor from "~/components/GalleryCursor";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -43,48 +44,30 @@ function ScrollProgress() {
   });
   return (
     <motion.div
-      className="fixed top-0 left-0 right-0 h-[3px] z-[100] origin-left bg-gradient-to-r from-electric-blue to-neon-pink"
+      className="fixed top-0 left-0 right-0 h-[3px] z-[100] origin-left bg-gradient-to-r from-copper to-teal"
       style={{ scaleX, transformOrigin: "0%" }}
     />
-  );
-}
-
-function CustomCursor() {
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-
-  React.useEffect(() => {
-    const updateMousePos = (ev: MouseEvent) => {
-      setMousePos({ x: ev.clientX, y: ev.clientY });
-    };
-    window.addEventListener("mousemove", updateMousePos);
-    return () => window.removeEventListener("mousemove", updateMousePos);
-  }, []);
-
-  return (
-    <motion.div
-      className="fixed pointer-events-none z-[999] flex flex-col items-start gap-1"
-      animate={{ x: mousePos.x + 20, y: mousePos.y + 20 }}
-      transition={{ type: "spring", stiffness: 500, damping: 28, mass: 0.5 }}
-    >
-      <div className="text-[10px] text-vivid-red font-mono tracking-widest bg-cyber-black/80 px-1 border border-vivid-red/30">
-        X: {Math.round(mousePos.x).toString().padStart(4, '0')}
-      </div>
-      <div className="text-[10px] text-vivid-red font-mono tracking-widest bg-cyber-black/80 px-1 border border-vivid-red/30">
-        Y: {Math.round(mousePos.y).toString().padStart(4, '0')}
-      </div>
-    </motion.div>
   );
 }
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(true);
 
+  useEffect(() => {
+    document.documentElement.dataset.theme = darkMode ? "dark" : "light";
+  }, [darkMode]);
+
   return (
-    <div className="bg-cyber-black text-slate-200 min-h-screen relative selection:bg-vivid-red selection:text-white cursor-crosshair">
-      <CustomCursor />
+    <div className="min-h-screen relative text-ink selection:bg-copper selection:text-cream">
+      <GalleryCursor />
       <ScrollProgress />
       <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
-      <main className="relative z-10 w-full overflow-hidden scanlines film-grain">
+      <div className="pointer-events-none fixed inset-0 z-0">
+        <div className="bg-glow" />
+        <div className="bg-topology" />
+        <div className="bg-dots" />
+      </div>
+      <main className="relative z-10 w-full overflow-hidden grain-overlay">
         <Hero />
         <About />
         <Skills />

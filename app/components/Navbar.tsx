@@ -10,7 +10,7 @@ const navLinks = [
   { name: 'SYSTEM', url: '#experience' },
 ];
 
-const Navbar = () => {
+const Navbar = ({ darkMode, setDarkMode }: { darkMode: boolean; setDarkMode: (value: boolean) => void }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
@@ -42,7 +42,7 @@ const Navbar = () => {
       transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
       className={`fixed w-full z-50 transition-all duration-500 ${
         scrolled
-          ? 'py-2 backdrop-blur-xl bg-cyber-black/80 border-b border-white/10'
+          ? 'py-2 backdrop-blur-xl bg-cream/80 border-b border-ink/10'
           : 'py-6 bg-transparent'
       }`}
     >
@@ -55,34 +55,38 @@ const Navbar = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
             className="flex items-center gap-3 group"
+            data-cursor-label="Home"
+            data-cursor-magnetic
           >
             <div className="flex flex-col">
-              <span className="text-xl font-display font-medium tracking-wide text-white uppercase leading-none">
+              <span className="text-xl font-display font-medium tracking-wide text-ink uppercase leading-none">
                 Jhanvi Jain
               </span>
-              <span className="text-[10px] font-mono text-slate-500 tracking-[0.2em] uppercase mt-1 group-hover:text-electric-blue transition-colors">
-                SYS.ARCHITECT // 1.0
+              <span className="text-[10px] font-mono text-ink/50 tracking-[0.2em] uppercase mt-1 group-hover:text-teal transition-colors">
+                Portfolio // 2026
               </span>
             </div>
           </motion.a>
 
           {/* Desktop Links & Status */}
           <div className="hidden lg:flex items-center gap-6">
-            <div className="flex items-center gap-1 bg-white/5 border border-white/10 px-4 py-2 rounded-full mr-4">
+            <div className="flex items-center gap-1 bg-cream/70 border border-ink/10 px-4 py-2 rounded-full mr-4">
               {navLinks.map((link) => {
                 const isActive = activeSection === link.url.replace('#', '');
                 return (
                   <motion.a
                     key={link.name}
                     href={link.url}
+                    data-cursor-label="Navigate"
+                    data-cursor-magnetic
                     className={`relative px-4 py-1 rounded-full text-xs font-mono transition-all duration-300 ${
-                      isActive ? 'text-cyber-black bg-white' : 'text-slate-400 hover:text-white'
+                      isActive ? 'text-cream bg-ink' : 'text-ink/60 hover:text-ink'
                     }`}
                   >
                     {isActive && (
                       <motion.div
                         layoutId="navTab"
-                        className="absolute inset-0 bg-white rounded-full z-0"
+                        className="absolute inset-0 bg-ink rounded-full z-0"
                       />
                     )}
                     <span className="relative z-10">{link.name}</span>
@@ -94,23 +98,39 @@ const Navbar = () => {
             {/* Availability Status (Mats.zip inspired) */}
             <a 
               href="#contact"
-              className="flex items-center gap-3 px-4 py-2 border border-white/10 rounded-full hover:bg-white/5 transition-colors cursor-crosshair group"
+              className="flex items-center gap-3 px-4 py-2 border border-ink/15 rounded-full hover:bg-cream/70 transition-colors group"
+              data-cursor-label="Connect"
+              data-cursor-magnetic
             >
               <div className="relative flex items-center justify-center w-2 h-2">
-                <div className="absolute inset-0 bg-green-500 rounded-full animate-ping opacity-75" />
-                <div className="relative w-2 h-2 bg-green-500 rounded-full" />
+                <div className="absolute inset-0 bg-olive rounded-full animate-ping opacity-75" />
+                <div className="relative w-2 h-2 bg-olive rounded-full" />
               </div>
-              <span className="font-mono text-[10px] uppercase tracking-widest text-slate-300 group-hover:text-white transition-colors">
-                Deployed & Active
+              <span className="font-mono text-[10px] uppercase tracking-widest text-ink/70 group-hover:text-ink transition-colors">
+                Available for Work
               </span>
             </a>
+
+            <button
+              type="button"
+              onClick={() => setDarkMode(!darkMode)}
+              className="flex items-center gap-2 px-4 py-2 border border-ink/15 rounded-full hover:bg-cream/70 transition-colors"
+              data-cursor-label="Theme"
+              data-cursor-magnetic
+            >
+              <span className="font-mono text-[10px] uppercase tracking-widest text-ink/70">
+                {darkMode ? "Light" : "Dark"} Mode
+              </span>
+            </button>
           </div>
 
           {/* Mobile menu button */}
           <motion.button
             onClick={toggleMenu}
             whileTap={{ scale: 0.9 }}
-            className="lg:hidden p-2 rounded border border-white/10 text-white backdrop-blur-sm bg-white/5"
+            className="lg:hidden p-2 rounded border border-ink/10 text-ink backdrop-blur-sm bg-cream/70"
+            data-cursor-label="Menu"
+            data-cursor-magnetic
           >
             <AnimatePresence mode="wait">
               {isOpen
@@ -134,7 +154,7 @@ const Navbar = () => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className="lg:hidden overflow-hidden border-t border-white/10 bg-cyber-black"
+            className="lg:hidden overflow-hidden border-t border-ink/10 bg-cream"
           >
             <div className="container mx-auto px-4 py-4 space-y-2">
               {navLinks.map((link, i) => (
@@ -145,21 +165,33 @@ const Navbar = () => {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.05 }}
-                  className="flex items-center gap-3 px-4 py-4 border border-white/5 rounded text-white font-mono text-sm tracking-widest hover:border-vivid-red hover:text-vivid-red transition-all"
+                  className="flex items-center gap-3 px-4 py-4 border border-ink/10 rounded text-ink font-mono text-sm tracking-widest hover:border-copper hover:text-copper transition-all"
+                  data-cursor-label="Open"
+                  data-cursor-magnetic
                 >
-                  <span className="text-vivid-red opacity-50">{'>'}</span> {link.name}
+                  <span className="text-copper opacity-50">{'>'}</span> {link.name}
                 </motion.a>
               ))}
               
-              <div className="mt-6 flex items-center justify-center gap-3 px-4 py-4 border border-white/10 rounded">
+              <div className="mt-6 flex items-center justify-center gap-3 px-4 py-4 border border-ink/10 rounded">
                 <div className="relative flex items-center justify-center w-2 h-2">
-                  <div className="absolute inset-0 bg-green-500 rounded-full animate-ping opacity-75" />
-                  <div className="relative w-2 h-2 bg-green-500 rounded-full" />
+                  <div className="absolute inset-0 bg-olive rounded-full animate-ping opacity-75" />
+                  <div className="relative w-2 h-2 bg-olive rounded-full" />
                 </div>
-                <span className="font-mono text-xs uppercase tracking-widest text-slate-300">
-                  System Active
+                <span className="font-mono text-xs uppercase tracking-widest text-ink/70">
+                  Currently Available
                 </span>
               </div>
+
+              <button
+                type="button"
+                onClick={() => setDarkMode(!darkMode)}
+                className="w-full flex items-center justify-center gap-3 px-4 py-4 border border-ink/10 rounded font-mono text-xs uppercase tracking-widest text-ink/70 hover:text-ink hover:border-ink/30 transition-all"
+                data-cursor-label="Theme"
+                data-cursor-magnetic
+              >
+                Switch to {darkMode ? "Light" : "Dark"} Mode
+              </button>
             </div>
           </motion.div>
         )}

@@ -16,7 +16,7 @@ function CyberOrb() {
     <Float speed={2} rotationIntensity={2} floatIntensity={2}>
       <Sphere ref={mesh} args={[1, 64, 64]} scale={1.5}>
         <MeshDistortMaterial
-          color="#ff2a85"
+          color="#c06b3e"
           attach="material"
           distort={0.4}
           speed={2}
@@ -49,7 +49,7 @@ const About = () => {
   const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <section id="about" className="py-32 relative z-20" ref={containerRef}>
+    <section id="about" className="py-32 relative z-20 section-frame" ref={containerRef}>
       <div className="container mx-auto px-6">
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -59,8 +59,8 @@ const About = () => {
             <div className="absolute inset-0 z-0 opacity-40 pointer-events-none">
               <Canvas camera={{ position: [0, 0, 4] }}>
                 <ambientLight intensity={1} />
-                <directionalLight position={[2, 1, 1]} intensity={2} color="#00f0ff" />
-                <directionalLight position={[-2, -1, -1]} intensity={2} color="#ff2a85" />
+                <directionalLight position={[2, 1, 1]} intensity={2} color="#2c6b6f" />
+                <directionalLight position={[-2, -1, -1]} intensity={2} color="#c06b3e" />
                 <CyberOrb />
               </Canvas>
             </div>
@@ -69,16 +69,18 @@ const About = () => {
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="relative z-10 p-8 glass-card rounded-2xl border border-electric-blue/20 max-w-md mx-auto lg:mx-0 backdrop-blur-md"
+              className="relative z-10 p-8 glass-card rounded-2xl border border-ink/10 max-w-md mx-auto lg:mx-0 backdrop-blur-md hover-lift"
+              data-cursor-label="Read"
+              data-cursor-magnetic
             >
-              <h2 className="text-3xl font-mono text-white mb-6 uppercase tracking-wider">
-                <span className="text-electric-blue">01.</span> Origin Story
+              <h2 className="text-3xl font-display text-ink mb-6 uppercase tracking-wider">
+                <span className="text-copper">01.</span> Origin Story
               </h2>
-              <p className="text-slate-300 leading-relaxed font-mono text-sm mb-6">
-                I am <span className="text-neon-pink font-semibold">Artist</span> + <span className="text-electric-blue font-semibold">Engineer</span> + <span className="text-deep-purple font-semibold">Researcher</span>. 
+              <p className="text-ink/70 leading-relaxed font-mono text-sm mb-6">
+                I am <span className="text-copper font-semibold">Artist</span> + <span className="text-teal font-semibold">Engineer</span> + <span className="text-olive font-semibold">Researcher</span>. 
                 My passion lies at the intersection of highly secure computing domains and incredibly intuitive generative AI models.
               </p>
-              <p className="text-slate-300 leading-relaxed font-mono text-sm">
+              <p className="text-ink/70 leading-relaxed font-mono text-sm">
                 Beyond my screen, I bring systems to life using critical thinking, while retaining the aesthetic sensibilities of a painter. 
                 I constantly search for elegance in logic.
               </p>
@@ -87,15 +89,15 @@ const About = () => {
 
           {/* Right: Animated Timeline */}
           <div className="relative">
-            <h2 className="text-3xl font-mono text-white mb-12 uppercase tracking-wider">
+            <h2 className="text-3xl font-display text-ink mb-12 uppercase tracking-wider">
                Journey Log
             </h2>
             
             <div className="relative pl-8">
               {/* Timeline glow line */}
-              <div className="absolute left-[15px] top-0 bottom-0 w-[2px] bg-white/10 rounded-full overflow-hidden">
+              <div className="absolute left-[15px] top-0 bottom-0 w-[2px] bg-ink/10 rounded-full overflow-hidden">
                 <motion.div 
-                  className="w-full bg-gradient-to-b from-electric-blue via-deep-purple to-neon-pink"
+                  className="w-full bg-gradient-to-b from-teal via-olive to-copper"
                   style={{ height: lineHeight }}
                 />
               </div>
@@ -111,13 +113,13 @@ const About = () => {
                     className="relative"
                   >
                     {/* Node Dot */}
-                    <div className="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-cyber-black border-2 border-electric-blue shadow-[0_0_10px_#00f0ff] z-10" />
+                    <div className="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-cream border-2 border-teal shadow-[0_0_10px_rgba(44,107,111,0.4)] z-10" />
                     
-                    <span className="text-xs font-mono text-neon-pink tracking-widest uppercase mb-1 block">
+                    <span className="text-xs font-mono text-copper tracking-widest uppercase mb-1 block">
                       {item.year}
                     </span>
-                    <h3 className="text-xl font-semibold text-white mb-2">{item.title}</h3>
-                    <p className="text-slate-400 text-sm leading-relaxed">{item.desc}</p>
+                    <h3 className="text-xl font-semibold text-ink mb-2">{item.title}</h3>
+                    <p className="text-ink/70 text-sm leading-relaxed">{item.desc}</p>
                   </motion.div>
                 ))}
               </div>

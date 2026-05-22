@@ -21,7 +21,7 @@ const Footer = ({ darkMode }: any) => {
     <footer className="relative pt-16 pb-8 mt-10">
       {/* Top divider wave */}
       <div className="absolute top-0 left-0 right-0 h-px"
-        style={{ background: 'linear-gradient(90deg, transparent, rgba(6,182,212,0.4), transparent)' }} />
+        style={{ background: 'linear-gradient(90deg, transparent, rgba(44,107,111,0.4), transparent)' }} />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main footer grid */}
@@ -48,24 +48,26 @@ const Footer = ({ darkMode }: any) => {
                 </svg>
               </motion.div>
               <div>
-                <h3 className="text-xl font-bold water-text-static">Jhanvi Jain</h3>
-                <p className="text-xs text-slate-500">like the River Ganga — ever-flowing</p>
+                <h3 className="text-xl font-bold text-ink">Jhanvi Jain</h3>
+                <p className="text-xs text-ink/50">like the River Ganga — ever-flowing</p>
               </div>
             </div>
 
-            <p className="text-sm text-slate-400 leading-relaxed max-w-sm">
+            <p className="text-sm text-ink/70 leading-relaxed max-w-sm">
               Full Stack Developer & AI Security Engineer building the future of intelligent security — one agentic workflow at a time.
             </p>
 
             {/* Contact info */}
             <div className="space-y-2">
               <a href="mailto:jhanvijain052003@gmail.com"
-                className="flex items-center gap-2 text-sm text-slate-400 hover:text-cyan-300 transition-colors duration-200">
-                <Mail size={14} className="text-cyan-500" />
+                className="flex items-center gap-2 text-sm text-ink/70 hover:text-teal transition-colors duration-200"
+                data-cursor-label="Email"
+              >
+                <Mail size={14} className="text-teal" />
                 jhanvijain052003@gmail.com
               </a>
-              <p className="flex items-center gap-2 text-sm text-slate-400">
-                <span className="text-cyan-500 text-xs">📍</span>
+              <p className="flex items-center gap-2 text-sm text-ink/70">
+                <span className="text-teal text-xs">📍</span>
                 India
               </p>
             </div>
@@ -86,8 +88,10 @@ const Footer = ({ darkMode }: any) => {
                   whileHover={{ y: -4, scale: 1.12 }}
                   whileTap={{ scale: 0.9 }}
                   title={s.label}
-                  className="w-9 h-9 rounded-xl flex items-center justify-center text-slate-400 hover:text-cyan-300 transition-all duration-300"
-                  style={{ background: 'rgba(6,182,212,0.07)', border: '1px solid rgba(6,182,212,0.15)' }}
+                  className="w-9 h-9 rounded-xl flex items-center justify-center text-ink/60 hover:text-teal transition-all duration-300"
+                  style={{ background: 'rgba(44,107,111,0.08)', border: '1px solid rgba(44,107,111,0.18)' }}
+                  data-cursor-label={s.label}
+                  data-cursor-magnetic
                 >
                   {s.icon}
                 </motion.a>
@@ -97,16 +101,17 @@ const Footer = ({ darkMode }: any) => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-sm font-semibold text-white mb-4 tracking-wide">Quick Links</h4>
+            <h4 className="text-sm font-semibold text-ink mb-4 tracking-wide">Quick Links</h4>
             <ul className="space-y-2.5">
               {quickLinks.map((link) => (
                 <li key={link}>
                   <motion.a
                     href={`#${link.toLowerCase()}`}
                     whileHover={{ x: 4 }}
-                    className="text-sm text-slate-400 hover:text-cyan-300 transition-all duration-200 flex items-center gap-2"
+                    className="text-sm text-ink/70 hover:text-teal transition-all duration-200 flex items-center gap-2"
+                    data-cursor-label="Jump"
                   >
-                    <span className="w-1 h-1 rounded-full bg-cyan-700" />
+                    <span className="w-1 h-1 rounded-full bg-teal" />
                     {link}
                   </motion.a>
                 </li>
@@ -118,13 +123,13 @@ const Footer = ({ darkMode }: any) => {
           <div className="space-y-6">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <Code size={15} className="text-cyan-400" />
-                <h4 className="text-sm font-semibold text-white tracking-wide">Core Stack</h4>
+                <Code size={15} className="text-teal" />
+                <h4 className="text-sm font-semibold text-ink tracking-wide">Core Stack</h4>
               </div>
               <div className="flex flex-wrap gap-1.5">
                 {techStack.map((tech) => (
-                  <span key={tech} className="px-2.5 py-1 rounded-full text-xs text-slate-300"
-                    style={{ background: 'rgba(6,182,212,0.08)', border: '1px solid rgba(6,182,212,0.15)' }}>
+                  <span key={tech} className="px-2.5 py-1 rounded-full text-xs text-ink/70"
+                    style={{ background: 'rgba(44,107,111,0.08)', border: '1px solid rgba(44,107,111,0.15)' }}>
                     {tech}
                   </span>
                 ))}
@@ -133,8 +138,8 @@ const Footer = ({ darkMode }: any) => {
 
             <div>
               <div className="flex items-center gap-2 mb-3">
-                <Coffee size={15} className="text-amber-400" />
-                <h4 className="text-sm font-semibold text-white tracking-wide">Support My Work</h4>
+                <Coffee size={15} className="text-copper" />
+                <h4 className="text-sm font-semibold text-ink tracking-wide">Support My Work</h4>
               </div>
               <motion.a
                 href="https://buymeacoffee.com/jhanvijain"
@@ -142,8 +147,9 @@ const Footer = ({ darkMode }: any) => {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.97 }}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold text-white shimmer-btn"
-                style={{ background: 'linear-gradient(135deg, #d97706, #f59e0b)', boxShadow: '0 4px 15px rgba(245,158,11,0.25)' }}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold text-cream"
+                style={{ background: 'linear-gradient(135deg, #c06b3e, #d7986a)', boxShadow: '0 4px 15px rgba(192,107,62,0.25)' }}
+                data-cursor-label="Support"
               >
                 <Coffee size={14} />
                 Buy me a coffee ☕
@@ -159,14 +165,14 @@ const Footer = ({ darkMode }: any) => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
           className="glass-card rounded-2xl p-5 mb-10"
-          style={{ borderColor: 'rgba(6,182,212,0.15)' }}
+          style={{ borderColor: 'rgba(44,107,111,0.15)' }}
         >
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {stats.map((stat, i) => (
               <div key={i} className="text-center">
-                <div className="text-3xl font-bold water-text-static">{stat.value}</div>
-                <div className="text-xs text-slate-500 mt-0.5">{stat.label}</div>
-                <div className="text-xs text-slate-600">{stat.sub}</div>
+                <div className="text-3xl font-bold text-ink">{stat.value}</div>
+                <div className="text-xs text-ink/50 mt-0.5">{stat.label}</div>
+                <div className="text-xs text-ink/40">{stat.sub}</div>
               </div>
             ))}
           </div>
@@ -174,24 +180,26 @@ const Footer = ({ darkMode }: any) => {
 
         {/* Bottom bar */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-6"
-          style={{ borderTop: '1px solid rgba(6,182,212,0.1)' }}>
+          style={{ borderTop: '1px solid rgba(44,107,111,0.1)' }}>
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-xs text-slate-600 text-center"
+            className="text-xs text-ink/50 text-center"
           >
             © {year} Jhanvi Jain — All rights reserved. Made with{' '}
             <Heart className="inline w-3 h-3 text-red-500" />{' '}
-            & a lot of <span className="text-cyan-500">💧</span> in India.
+            & a lot of <span className="text-teal">💧</span> in India.
           </motion.p>
           <motion.button
             onClick={scrollToTop}
             whileHover={{ y: -4, scale: 1.1 }}
             whileTap={{ scale: 0.93 }}
-            className="w-10 h-10 rounded-full flex items-center justify-center text-cyan-400 transition-all duration-300 glow-cyan"
-            style={{ background: 'rgba(6,182,212,0.1)', border: '1px solid rgba(6,182,212,0.25)' }}
+            className="w-10 h-10 rounded-full flex items-center justify-center text-teal transition-all duration-300"
+            style={{ background: 'rgba(44,107,111,0.1)', border: '1px solid rgba(44,107,111,0.25)' }}
             aria-label="Scroll to top"
+            data-cursor-label="Top"
+            data-cursor-magnetic
           >
             <ArrowUp size={16} />
           </motion.button>

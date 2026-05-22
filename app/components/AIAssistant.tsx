@@ -55,12 +55,14 @@ const AIAssistant = () => {
         animate={{ scale: 1 }}
         transition={{ delay: 3, type: "spring" }}
         onClick={() => setIsOpen(true)}
-        className={`fixed bottom-8 right-8 z-[150] w-14 h-14 rounded-full flex items-center justify-center bg-cyber-black border border-electric-blue shadow-[0_0_20px_rgba(0,240,255,0.4)] ${isOpen ? 'hidden' : 'flex'}`}
+        className={`fixed bottom-8 right-8 z-[150] w-14 h-14 rounded-full flex items-center justify-center bg-cream border border-ink/20 shadow-[0_0_20px_rgba(17,17,17,0.2)] ${isOpen ? 'hidden' : 'flex'}`}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
+        data-cursor-label="Assistant"
+        data-cursor-magnetic
       >
-        <div className="absolute inset-0 rounded-full bg-electric-blue/20 animate-ping opacity-75" />
-        <Bot size={24} className="text-electric-blue relative z-10" />
+        <div className="absolute inset-0 rounded-full bg-teal/20 animate-ping opacity-75" />
+        <Bot size={24} className="text-teal relative z-10" />
       </motion.button>
 
       {/* Chat Window */}
@@ -70,26 +72,27 @@ const AIAssistant = () => {
             initial={{ opacity: 0, y: 50, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 50, scale: 0.9 }}
-            className="fixed bottom-6 right-6 z-[200] w-80 sm:w-96 glass-card border border-white/20 rounded-2xl overflow-hidden flex flex-col shadow-[0_0_50px_rgba(112,0,255,0.3)]"
+            className="fixed bottom-6 right-6 z-[200] w-80 sm:w-96 glass-card border border-ink/20 rounded-2xl overflow-hidden flex flex-col"
             style={{ height: '500px', maxHeight: 'calc(100vh - 40px)' }}
           >
             {/* Header */}
-            <div className="bg-cyber-dark p-4 border-b border-white/10 flex items-center justify-between">
+            <div className="bg-cream p-4 border-b border-ink/10 flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-neon-pink/20 flex items-center justify-center border border-neon-pink/50">
-                  <Cpu size={16} className="text-neon-pink" />
+                <div className="w-8 h-8 rounded-full bg-copper/10 flex items-center justify-center border border-copper/30">
+                  <Cpu size={16} className="text-copper" />
                 </div>
                 <div>
-                  <h3 className="text-white font-mono text-sm font-bold">J.A.I.N. Core</h3>
+                  <h3 className="text-ink font-mono text-sm font-bold">J.A.I.N. Core</h3>
                   <div className="flex items-center gap-1.5 mt-0.5">
-                    <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-                    <span className="text-[10px] text-slate-400 font-mono tracking-widest uppercase">Online</span>
+                    <div className="w-1.5 h-1.5 rounded-full bg-olive animate-pulse" />
+                    <span className="text-[10px] text-ink/50 font-mono tracking-widest uppercase">Online</span>
                   </div>
                 </div>
               </div>
               <button 
                 onClick={() => setIsOpen(false)}
-                className="text-slate-400 hover:text-white transition-colors"
+                className="text-ink/50 hover:text-ink transition-colors"
+                data-cursor-label="Close"
               >
                 <X size={20} />
               </button>
@@ -107,8 +110,8 @@ const AIAssistant = () => {
                   <div 
                     className={`max-w-[85%] p-3 rounded-lg ${
                       msg.sender === 'user' 
-                      ? 'bg-electric-blue/20 text-electric-blue border border-electric-blue/30 rounded-br-none' 
-                      : 'bg-white/5 text-slate-300 border border-white/10 rounded-bl-none'
+                      ? 'bg-teal/10 text-teal border border-teal/20 rounded-br-none' 
+                      : 'bg-cream/70 text-ink/70 border border-ink/10 rounded-bl-none'
                     }`}
                   >
                     {msg.text}
@@ -118,15 +121,15 @@ const AIAssistant = () => {
               
               {isTyping && (
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex justify-start">
-                  <div className="max-w-[80%] p-3 rounded-lg bg-white/5 border border-white/10 rounded-bl-none flex items-center gap-2">
-                    <div className="w-3 h-3 rounded-full bg-electric-blue/50 flex flex-col items-center justify-center overflow-hidden">
+                  <div className="max-w-[80%] p-3 rounded-lg bg-cream/70 border border-ink/10 rounded-bl-none flex items-center gap-2">
+                    <div className="w-3 h-3 rounded-full bg-teal/40 flex flex-col items-center justify-center overflow-hidden">
                       <motion.div 
                         animate={{ height: ['20%', '100%', '20%'] }} 
                         transition={{ repeat: Infinity, duration: 1 }} 
-                        className="w-full bg-electric-blue opacity-50" 
+                        className="w-full bg-teal opacity-50" 
                       />
                     </div>
-                    <span className="text-slate-500 text-xs">Synthesizing...</span>
+                    <span className="text-ink/50 text-xs">Synthesizing...</span>
                   </div>
                 </motion.div>
               )}
@@ -134,18 +137,19 @@ const AIAssistant = () => {
             </div>
 
             {/* Input Area */}
-            <form onSubmit={handleSend} className="p-3 bg-cyber-dark/80 border-t border-white/10 flex gap-2">
+            <form onSubmit={handleSend} className="p-3 bg-cream border-t border-ink/10 flex gap-2">
               <input
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Query system..."
-                className="flex-1 bg-cyber-black border border-white/10 rounded-lg px-3 py-2 text-white font-mono text-sm focus:outline-none focus:border-neon-pink"
+                className="flex-1 bg-cream/80 border border-ink/10 rounded-lg px-3 py-2 text-ink font-mono text-sm focus:outline-none focus:border-copper"
               />
               <button 
                 type="submit"
                 disabled={!input.trim() || isTyping}
-                className="w-10 h-10 rounded-lg bg-electric-blue/20 text-electric-blue border border-electric-blue/30 flex items-center justify-center disabled:opacity-50 transition-colors hover:bg-electric-blue/30"
+                className="w-10 h-10 rounded-lg bg-teal/10 text-teal border border-teal/20 flex items-center justify-center disabled:opacity-50 transition-colors hover:bg-teal/20"
+                data-cursor-label="Send"
               >
                 <Send size={16} />
               </button>
